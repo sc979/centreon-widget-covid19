@@ -51,5 +51,4 @@ let timeout;
 
 jQuery(function () {
     loadPage();
-    console.log(labelTitles);
 });
