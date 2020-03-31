@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<title>Covid19 apex charts</title>
+		<link href="../../Theme/Centreon-2/style.css" type="text/css"/>
+		<link href="../../Themes/Centreon-2/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<link href="../../Themes/Centreon-2/jquery-ui/jquery-ui-centreon.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="../../include/common/javascript/jquery/jquery.js"></script>
+		<script type="text/javascript" src="../../include/common/javascript/jquery/jquery-ui.js"></script>
+		<script type="text/javascript" src="../../include/common/javascript/widgetUtils.js"></script>
+		<!--script type="text/javascript" src="https://cdn.jsdelivr.net/npm/apexcharts"></script-->
+		<script type="text/javascript" src="./lib/apexcharts.min.js"></script>
+
+	</head>
+	<body>
+		<div id="chartWidget">
+		</div>
+	</body>
+	<script>
+		let customScale = "{$ratio}";
+		let countryName = "Data for : {$data.country}";
+		let labelTitles = {$titles};
+		let dataValues = {$values};
+		let userPalette = "{$userPalette}";
+
+		let displayValues = "{$displayValues}" ?? "none";
+		let displayValuesLegend = false;
+		let displayValuesInChart = false;
+		{literal}
+		if (displayValues == "all") {
+			displayValuesLegend = true;
+			displayValuesInChart = true;
+		} else if (displayValues == "legend") {
+			displayValuesLegend = true;
+			displayValuesInChart = false;
+		} else if (displayValues == "chart") {
+			displayValuesLegend = false;
+			displayValuesInChart = true;
+		}
+
+		let options = {
+			title: {
+				text: countryName,
+				align: 'Center',
+				margin: 10,
+				floating: true,
+				style: {
+					fontSize:  '16px',
+					fontWeight:  'bold',
+					color:  '#263238'
+				},
+			},
+			chart: {
+				height: 380,
+				type: 'radialBar',
+			},
+			plotOptions: {
+				radialBar: {
+					offsetY: 0,
+					startAngle: 0,
+					endAngle: 270,
+					hollow: {
+						margin: 5,
+						size: '30%',
+						background: 'transparent'
+					},
+					dataLabels: {
+						name: {
+							show: true,
+						},
+						value: {
+							show: displayValuesInChart,
+							formatter: function(val) {
+								return (Math.round(val / customScale))
+							},
+						}
+					}
+				}
+			},
+			legend: {
+				show: true,
+				floating: true,
+				fontSize: '14px',
+				position: 'left',
+				offsetX: 135,
+				offsetY: 30,
+				itemMargin: {
+					vertical: 15
+				},
+				labels: {
+					useSeriesColors: true,
+				},
+				formatter: function(seriesName, opts) {
+					if (true === displayValuesLegend) {
+						let revertScale = Math.round(opts.w.globals.series[opts.seriesIndex] / customScale);
+						return seriesName + ":  " + revertScale;
+					} else {
+						return seriesName;
+					}
+				},
+			},
+			responsive: [{
+				breakpoint: 480,
+				options: {
+					legend: {
+						show: true
+					}
+				}
+			}],
+			labels: labelTitles,
+			series: dataValues,
+			theme: {
+				palette: userPalette
+			}
+		};
+
+		const chart = new ApexCharts(document.querySelector("#chartWidget"), options);
+		chart.render();
+		{/literal}
+	</script>
+	<script type="text/javascript" src="src/data.js"></script>
+</html>

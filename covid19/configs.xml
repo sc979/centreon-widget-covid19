@@ -1,0 +1,54 @@
+<configs>
+    <title>Covid19 stats</title>
+    <author>Centreon</author>
+    <email>contact@centreon.com</email>
+    <website>http://www.centreon.com</website>
+    <description>Covid19 statistics</description>
+    <version>19.10.11</version>
+    <keywords>centreon, widget, covid, 19</keywords>
+    <screenshot></screenshot>
+    <thumbnail>./widgets/covid19/resources/centreon-logo.png</thumbnail>
+    <url>./widgets/covid19/index.php</url>
+    <autoRefresh>10</autoRefresh>
+    <preferences>
+        <preference label="Source API" name="api_name" defaultValue="API_HEROKU" type="list">
+            <option value="API_NINJA" label="corona.lmao.ninja"/>
+            <option value="API_HEROKU" label="api.herokuapp.com"/>
+        </preference>
+        <preference label="Cases number" name="cases" defaultValue="1" type="boolean"/>
+        <preference label="Active" name="active" defaultValue="1" type="boolean"/>
+        <preference label="Recovered" name="recovered" defaultValue="1" type="boolean"/>
+        <preference label="Deaths" name="deaths" defaultValue="0" type="boolean"/>
+        <preference label="Critical" name="critical" defaultValue="1" type="boolean"/>
+        <preference label="Today cases" name="todayCases" defaultValue="0" type="boolean"/>
+        <preference label="Today deaths" name="todayDeaths" defaultValue="0" type="boolean"/>
+        <preference label="Cases per one million" name="casesPerOneMillion" defaultValue="0" type="boolean"/>
+        <preference label="Country preference" name="list" defaultValue="france" type="list">
+            <option value="france" label="France"/>
+            <option value="germany" label="Germany"/>
+            <option value="italy" label="Italy"/>
+            <option value="spain" label="Spain"/>
+            <option value="china" label="China"/>
+            <option value="usa" label="USA"/>
+        </preference>
+        <preference label="Display values ?" name="displayValues" defaultValue="all" type="list">
+            <option value="none" label="No"/>
+            <option value="legend" label="In the legend"/>
+            <option value="chart" label="In the chart"/>
+            <option value="all" label="Both"/>
+        </preference>
+        <preference label="Theme" name="palette" defaultValue="palette10" type="list">
+            <option value="palette1" label="Theme 1"/>
+            <option value="palette2" label="Theme 2"/>
+            <option value="palette3" label="Theme 3"/>
+            <option value="palette4" label="Theme 4"/>
+            <option value="palette5" label="Theme 5"/>
+            <option value="palette6" label="Theme 6"/>
+            <option value="palette7" label="Theme 7"/>
+            <option value="palette8" label="Theme 8"/>
+            <option value="palette9" label="Theme 9"/>
+            <option value="palette10" label="Theme 10"/>
+        </preference>
+        <preference label="Refresh Interval (minutes)" name="refresh_interval" defaultValue="30" type="text" header="Misc"/>
+    </preferences>
+</configs>
