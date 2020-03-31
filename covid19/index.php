@@ -155,7 +155,7 @@ foreach ($chartData as $key => $value) {
 }
 
 // sort and split the retrieved data
-arsort($chartData);
+//arsort($chartData);
 $titles = array_keys($chartData);
 $values = array_values($chartData);
 
