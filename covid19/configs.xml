@@ -31,7 +31,7 @@
             <option value="china" label="China"/>
             <option value="usa" label="USA"/>
         </preference>
-        <preference label="Display values ?" name="displayValues" defaultValue="all" type="list">
+        <preference label="Display values ?" name="displayValues" defaultValue="all" type="list" header="Misc">
             <option value="none" label="No"/>
             <option value="legend" label="In the legend"/>
             <option value="chart" label="In the chart"/>
@@ -49,6 +49,6 @@
             <option value="palette9" label="Theme 9"/>
             <option value="palette10" label="Theme 10"/>
         </preference>
-        <preference label="Refresh Interval (minutes)" name="refresh_interval" defaultValue="30" type="text" header="Misc"/>
+        <preference label="Refresh Interval (minutes)" name="refresh_interval" defaultValue="30" type="text"/>
     </preferences>
 </configs>
