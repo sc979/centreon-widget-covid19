@@ -16,22 +16,19 @@
         </div>
     </body>
     <script>
-        let customScale = "{$ratio}";
         let countryName = "Data for : {$data.country}";
         let labelTitles = {$titles};
         let dataValues = {$values};
         let userPalette = "{$userPalette}";
+        let customScale = "{$ratio}";
 
-		let iFrameWidth = window.frameElement.offsetWidth;
-		{literal}
-		let legendPadding = (iFrameWidth / 2) - 200;
-		if (legendPadding <= 0) {
-			legendPadding = 16;
-		}
-		{/literal}
-
-        console.log(iFrameWidth);
-		console.log(legendPadding);
+        let iFrameWidth = window.frameElement.offsetWidth;
+        {literal}
+        let legendPadding = (iFrameWidth / 2) - 200;
+        if (legendPadding <= 0) {
+            legendPadding = 16;
+        }
+        {/literal}
 
         let displayValues = "{$displayValues}" ?? "none";
         let displayValuesLegend = false;
