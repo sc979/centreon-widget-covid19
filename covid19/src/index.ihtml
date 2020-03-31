@@ -26,7 +26,7 @@
         {literal}
         let legendPadding = (iFrameWidth / 2) - 200;
         if (legendPadding <= 0) {
-            legendPadding = 16;
+            legendPadding = 0;
         }
         {/literal}
 
