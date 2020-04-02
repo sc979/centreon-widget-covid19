@@ -139,7 +139,7 @@ try {
 
 // get checked preferences
 $chartData = array_filter($preferences ?? false, function ($valid) {
-    return (1 === $valid % 2);
+    return (1 === (int)$valid % 2);
 });
 
 // check API data consistency with the filters
