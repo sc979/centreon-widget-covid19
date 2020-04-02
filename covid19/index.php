@@ -143,13 +143,11 @@ $chartData = array_filter($preferences ?? false, function ($valid) {
 });
 
 // check API data consistency with the filters
-$chosenPref = 0;
 $apiData = json_decode($apiData, true);
 foreach ($chartData as $key => $value) {
     if (isset($apiData[$key])) {
         $chartData[$key] = $apiData[$key];
     }
-    $chosenPref++;
 }
 
 // sort the data if required
