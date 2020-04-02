@@ -49,6 +49,11 @@
             <option value="palette9" label="Theme 9"/>
             <option value="palette10" label="Theme 10"/>
         </preference>
+        <preference label="Sort cases" name="sort" defaultValue="asc" type="list">
+            <option value="none" label="none"/>
+            <option value="asc" label="asc"/>
+            <option value="desc" label="desc"/>
+        </preference>
         <preference label="Refresh Interval (minutes)" name="refresh_interval" defaultValue="30" type="text"/>
     </preferences>
 </configs>

@@ -152,13 +152,23 @@ foreach ($chartData as $key => $value) {
     $chosenPref++;
 }
 
-// sort and split the retrieved data
-//arsort($chartData);
+// sort the data if required
+if ("desc" === $preferences['sort']) {
+    asort($chartData);
+} elseif ("asc" === $preferences['sort']) {
+    arsort($chartData);
+}
+
+// get the max value and split the retrieved data
 $titles = array_keys($chartData);
 $values = array_values($chartData);
+$max = 0;
+foreach ($values as $value) {
+    $max = ($value > $max) ? $value : $max;
+}
 
 //convert values to percentage to be able to display the values properly
-$ratio = 100 / $values[0];
+$ratio = 100 / $max;
 foreach ($values as $key => $value) {
     $values[$key] = $value * $ratio;
 }
