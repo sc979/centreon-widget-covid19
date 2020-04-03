@@ -14,7 +14,7 @@
         </div>
     </body>
     <script>
-        let countryName = "Data for : {$data.country}";
+        let countryName = "Data for : {$country}";
         let labelTitles = {$titles};
         let dataValues = {$values};
         let userPalette = "{$userPalette}";

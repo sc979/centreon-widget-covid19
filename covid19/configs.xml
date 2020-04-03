@@ -1,13 +1,11 @@
 <configs>
     <title>Covid19 stats</title>
     <author>Centreon</author>
-    <email>contact@centreon.com</email>
-    <website>http://www.centreon.com</website>
+    <email>schapron@centreon.com</email>
     <description>Covid19 statistics</description>
-    <version>19.10.0</version>
-    <keywords>centreon, widget, covid, 19</keywords>
+    <version>19.10.13</version>
+    <keywords>sc979, widget, covid, centreon</keywords>
     <screenshot></screenshot>
-    <thumbnail>./widgets/covid19/resources/centreon-logo.png</thumbnail>
     <url>./widgets/covid19/index.php</url>
     <autoRefresh>10</autoRefresh>
     <preferences>
@@ -24,12 +22,212 @@
         <preference label="Today deaths" name="todayDeaths" defaultValue="0" type="boolean"/>
         <preference label="Cases per one million" name="casesPerOneMillion" defaultValue="0" type="boolean"/>
         <preference label="Country preference" name="list" defaultValue="france" type="list">
-            <option value="france" label="France"/>
-            <option value="germany" label="Germany"/>
-            <option value="italy" label="Italy"/>
-            <option value="spain" label="Spain"/>
+            <option value="afghanistan" label="Afghanistan"/>
+            <option value="albania" label="Albania"/>
+            <option value="algeria" label="Algeria"/>
+            <option value="andorra" label="Andorra"/>
+            <option value="angola" label="Angola"/>
+            <option value="anguilla" label="Anguilla"/>
+            <option value="antigua and barbuda" label="Antigua and Barbuda"/>
+            <option value="argentina" label="Argentina"/>
+            <option value="armenia" label="Armenia"/>
+            <option value="aruba" label="Aruba"/>
+            <option value="australia" label="Australia"/>
+            <option value="austria" label="Austria"/>
+            <option value="azerbaijan" label="Azerbaijan"/>
+            <option value="bahamas" label="Bahamas"/>
+            <option value="bahrain" label="Bahrain"/>
+            <option value="bangladesh" label="Bangladesh"/>
+            <option value="barbados" label="Barbados"/>
+            <option value="belarus" label="Belarus"/>
+            <option value="belgium" label="Belgium"/>
+            <option value="belize" label="Belize"/>
+            <option value="benin" label="Benin"/>
+            <option value="bermuda" label="Bermuda"/>
+            <option value="bhutan" label="Bhutan"/>
+            <option value="bolivia" label="Bolivia"/>
+            <option value="bosnia and herzegovina" label="Bosnia and Herzegovina"/>
+            <option value="botswana" label="Botswana"/>
+            <option value="brazil" label="Brazil"/>
+            <option value="british virgin islands" label="British Virgin Islands"/>
+            <option value="brunei" label="Brunei"/>
+            <option value="bulgaria" label="Bulgaria"/>
+            <option value="burkina faso" label="Burkina Faso"/>
+            <option value="burundi" label="Burundi"/>
+            <option value="car" label="CAR"/>
+            <option value="cabo verde" label="Cabo Verde"/>
+            <option value="cambodia" label="Cambodia"/>
+            <option value="cameroon" label="Cameroon"/>
+            <option value="canada" label="Canada"/>
+            <option value="caribbean netherlands" label="Caribbean Netherlands"/>
+            <option value="cayman islands" label="Cayman Islands"/>
+            <option value="chad" label="Chad"/>
+            <option value="channel islands" label="Channel Islands"/>
+            <option value="chile" label="Chile"/>
             <option value="china" label="China"/>
+            <option value="colombia" label="Colombia"/>
+            <option value="congo" label="Congo"/>
+            <option value="costa rica" label="Costa Rica"/>
+            <option value="croatia" label="Croatia"/>
+            <option value="cuba" label="Cuba"/>
+            <option value="curaçao" label="Curaçao"/>
+            <option value="cyprus" label="Cyprus"/>
+            <option value="czechia" label="Czechia"/>
+            <option value="drc" label="DRC"/>
+            <option value="denmark" label="Denmark"/>
+            <option value="diamond princess" label="Diamond Princess"/>
+            <option value="djibouti" label="Djibouti"/>
+            <option value="dominica" label="Dominica"/>
+            <option value="dominican republic" label="Dominican Republic"/>
+            <option value="ecuador" label="Ecuador"/>
+            <option value="egypt" label="Egypt"/>
+            <option value="el salvador" label="El Salvador"/>
+            <option value="equatorial guinea" label="Equatorial Guinea"/>
+            <option value="eritrea" label="Eritrea"/>
+            <option value="estonia" label="Estonia"/>
+            <option value="eswatini" label="Eswatini"/>
+            <option value="ethiopia" label="Ethiopia"/>
+            <option value="faeroe islands" label="Faeroe Islands"/>
+            <option value="fiji" label="Fiji"/>
+            <option value="finland" label="Finland"/>
+            <option value="france" label="France"/>
+            <option value="french guiana" label="French Guiana"/>
+            <option value="french polynesia" label="French Polynesia"/>
+            <option value="gabon" label="Gabon"/>
+            <option value="gambia" label="Gambia"/>
+            <option value="georgia" label="Georgia"/>
+            <option value="germany" label="Germany"/>
+            <option value="ghana" label="Ghana"/>
+            <option value="gibraltar" label="Gibraltar"/>
+            <option value="greece" label="Greece"/>
+            <option value="greenland" label="Greenland"/>
+            <option value="grenada" label="Grenada"/>
+            <option value="guadeloupe" label="Guadeloupe"/>
+            <option value="guatemala" label="Guatemala"/>
+            <option value="guinea" label="Guinea"/>
+            <option value="guinea-bissau" label="Guinea-Bissau"/>
+            <option value="guyana" label="Guyana"/>
+            <option value="haiti" label="Haiti"/>
+            <option value="honduras" label="Honduras"/>
+            <option value="hong kong" label="Hong Kong"/>
+            <option value="hungary" label="Hungary"/>
+            <option value="iceland" label="Iceland"/>
+            <option value="india" label="India"/>
+            <option value="indonesia" label="Indonesia"/>
+            <option value="iran" label="Iran"/>
+            <option value="iraq" label="Iraq"/>
+            <option value="ireland" label="Ireland"/>
+            <option value="isle of man" label="Isle of Man"/>
+            <option value="israel" label="Israel"/>
+            <option value="italy" label="Italy"/>
+            <option value="ivory coast" label="Ivory Coast"/>
+            <option value="jamaica" label="Jamaica"/>
+            <option value="japan" label="Japan"/>
+            <option value="jordan" label="Jordan"/>
+            <option value="kazakhstan" label="Kazakhstan"/>
+            <option value="kenya" label="Kenya"/>
+            <option value="kuwait" label="Kuwait"/>
+            <option value="kyrgyzstan" label="Kyrgyzstan"/>
+            <option value="laos" label="Laos"/>
+            <option value="latvia" label="Latvia"/>
+            <option value="lebanon" label="Lebanon"/>
+            <option value="liberia" label="Liberia"/>
+            <option value="libya" label="Libya"/>
+            <option value="liechtenstein" label="Liechtenstein"/>
+            <option value="lithuania" label="Lithuania"/>
+            <option value="luxembourg" label="Luxembourg"/>
+            <option value="ms zaandam" label="MS Zaandam"/>
+            <option value="macao" label="Macao"/>
+            <option value="madagascar" label="Madagascar"/>
+            <option value="malawi" label="Malawi"/>
+            <option value="malaysia" label="Malaysia"/>
+            <option value="maldives" label="Maldives"/>
+            <option value="mali" label="Mali"/>
+            <option value="malta" label="Malta"/>
+            <option value="martinique" label="Martinique"/>
+            <option value="mauritania" label="Mauritania"/>
+            <option value="mauritius" label="Mauritius"/>
+            <option value="mayotte" label="Mayotte"/>
+            <option value="mexico" label="Mexico"/>
+            <option value="moldova" label="Moldova"/>
+            <option value="monaco" label="Monaco"/>
+            <option value="mongolia" label="Mongolia"/>
+            <option value="montenegro" label="Montenegro"/>
+            <option value="montserrat" label="Montserrat"/>
+            <option value="morocco" label="Morocco"/>
+            <option value="mozambique" label="Mozambique"/>
+            <option value="myanmar" label="Myanmar"/>
+            <option value="namibia" label="Namibia"/>
+            <option value="nepal" label="Nepal"/>
+            <option value="netherlands" label="Netherlands"/>
+            <option value="new caledonia" label="New Caledonia"/>
+            <option value="new zealand" label="New Zealand"/>
+            <option value="nicaragua" label="Nicaragua"/>
+            <option value="niger" label="Niger"/>
+            <option value="nigeria" label="Nigeria"/>
+            <option value="north macedonia" label="North Macedonia"/>
+            <option value="norway" label="Norway"/>
+            <option value="oman" label="Oman"/>
+            <option value="pakistan" label="Pakistan"/>
+            <option value="palestine" label="Palestine"/>
+            <option value="panama" label="Panama"/>
+            <option value="papua new guinea" label="Papua New Guinea"/>
+            <option value="paraguay" label="Paraguay"/>
+            <option value="peru" label="Peru"/>
+            <option value="philippines" label="Philippines"/>
+            <option value="poland" label="Poland"/>
+            <option value="portugal" label="Portugal"/>
+            <option value="qatar" label="Qatar"/>
+            <option value="romania" label="Romania"/>
+            <option value="russia" label="Russia"/>
+            <option value="rwanda" label="Rwanda"/>
+            <option value="réunion" label="Réunion"/>
+            <option value="s. korea" label="S. Korea"/>
+            <option value="saint kitts and nevis" label="Saint Kitts and Nevis"/>
+            <option value="saint lucia" label="Saint Lucia"/>
+            <option value="saint martin" label="Saint Martin"/>
+            <option value="san marino" label="San Marino"/>
+            <option value="saudi arabia" label="Saudi Arabia"/>
+            <option value="senegal" label="Senegal"/>
+            <option value="serbia" label="Serbia"/>
+            <option value="seychelles" label="Seychelles"/>
+            <option value="sierra leone" label="Sierra Leone"/>
+            <option value="singapore" label="Singapore"/>
+            <option value="sint maarten" label="Sint Maarten"/>
+            <option value="slovakia" label="Slovakia"/>
+            <option value="slovenia" label="Slovenia"/>
+            <option value="somalia" label="Somalia"/>
+            <option value="south africa" label="South Africa"/>
+            <option value="spain" label="Spain"/>
+            <option value="sri lanka" label="Sri Lanka"/>
+            <option value="st. barth" label="St. Barth"/>
+            <option value="st. vincent grenadines" label="St. Vincent Grenadines"/>
+            <option value="sudan" label="Sudan"/>
+            <option value="suriname" label="Suriname"/>
+            <option value="sweden" label="Sweden"/>
+            <option value="switzerland" label="Switzerland"/>
+            <option value="syria" label="Syria"/>
+            <option value="taiwan" label="Taiwan"/>
+            <option value="tanzania" label="Tanzania"/>
+            <option value="thailand" label="Thailand"/>
+            <option value="timor-leste" label="Timor-Leste"/>
+            <option value="togo" label="Togo"/>
+            <option value="trinidad and tobago" label="Trinidad and Tobago"/>
+            <option value="tunisia" label="Tunisia"/>
+            <option value="turkey" label="Turkey"/>
+            <option value="turks and caicos" label="Turks and Caicos"/>
+            <option value="uae" label="UAE"/>
+            <option value="uk" label="UK"/>
             <option value="usa" label="USA"/>
+            <option value="uganda" label="Uganda"/>
+            <option value="ukraine" label="Ukraine"/>
+            <option value="uruguay" label="Uruguay"/>
+            <option value="uzbekistan" label="Uzbekistan"/>
+            <option value="vatican city" label="Vatican City"/>
+            <option value="venezuela" label="Venezuela"/>
+            <option value="vietnam" label="Vietnam"/>
+            <option value="zambia" label="Zambia"/>
+            <option value="zimbabwe" label="Zimbabwe"/>
         </preference>
         <preference label="Display values ?" name="displayValues" defaultValue="all" type="list" header="Misc">
             <option value="none" label="No"/>
@@ -50,7 +248,7 @@
             <option value="palette10" label="Theme 10"/>
         </preference>
         <preference label="Sort cases" name="sort" defaultValue="asc" type="list">
-            <option value="none" label="none"/>
+            <option value="none" label="No"/>
             <option value="asc" label="asc"/>
             <option value="desc" label="desc"/>
         </preference>

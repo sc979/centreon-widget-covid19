@@ -34,14 +34,14 @@
  *
  */
 
-require_once "../require.php";
+require_once '../require.php';
 require_once $centreon_path . 'bootstrap.php';
 require_once $centreon_path . 'www/class/centreon.class.php';
 require_once $centreon_path . 'www/class/centreonSession.class.php';
 require_once $centreon_path . 'www/class/centreonWidget.class.php';
 
 CentreonSession::start(1);
-if (!isset($_SESSION['centreon']) || !isset($_REQUEST['widgetId'])) {
+if (!isset($_SESSION['centreon'], $_REQUEST['widgetId'])) {
     exit;
 }
 $centreon = $_SESSION['centreon'];
@@ -52,17 +52,15 @@ try {
     $widgetObj = new CentreonWidget($centreon, $db);
     $preferences = $widgetObj->getWidgetPreferences($widgetId);
 
-    // convert the autoRefresh value in minutes
-    $autoRefresh = (int)$preferences['refresh_interval'] > 0
-        ? (int)$preferences['refresh_interval'] * 60
-        : 30 * 60;
+    // check and convert the autoRefresh value in minutes
+    $autoRefresh = 60 * ((int)$preferences['refresh_interval'] > 0 ? $preferences['refresh_interval'] : 30);
 } catch (Exception $e) {
     echo $e->getMessage() . "<br/>";
     exit;
 }
 
 $country = filter_var(($preferences['list'] ?? false), FILTER_SANITIZE_STRING);
-if ($country === false) {
+if (false === $country) {
     throw new InvalidArgumentException('Bad argument format');
 }
 
@@ -70,9 +68,7 @@ $availableApi = [
     'API_NINJA' => 'https://corona.lmao.ninja',
     'API_HEROKU' => 'https://coronavirus-19-api.herokuapp.com',
 ];
-
-
-$apiUrl = $availableApi[$preferences['api_name']] . '/countries/' . $country;
+$apiUrl = $availableApi[$preferences['api_name']] . '/countries/' . rawurlencode($country);
 
 // set curl options
 $curlOptions = [
@@ -119,13 +115,12 @@ try {
             $centreon->optGen['proxy_user'] . ":" . $centreon->optGen['proxy_password']
         );
     }
-
     $apiData = curl_exec($request);
     $error = curl_error($request);
 
     if (!$apiData) {
         $errorMessage = 'Failed Curl request.';
-        if ($proxyEnabled === true) {
+        if (true === $proxyEnabled) {
             $errorMessage .= '\nPlease check your proxy configuration in the administration form';
         }
         echo "<PRE>$errorMessage</PRE>";
@@ -178,7 +173,7 @@ $template = initSmartyTplForPopup($path, $template, "./", $centreon_path);
 $template->assign('widgetId', $widgetId);
 $template->assign('preferences', $preferences);
 $template->assign('autoRefresh', $autoRefresh);
-$template->assign('data', $apiData);
+$template->assign('country', $apiData['country']);
 $template->assign('titles', json_encode($titles));
 $template->assign('values', json_encode($values));
 $template->assign('ratio', $ratio);
