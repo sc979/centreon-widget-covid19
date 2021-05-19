@@ -3,7 +3,7 @@
     <author>Centreon</author>
     <email>schapron@centreon.com</email>
     <description>Covid19 statistics</description>
-    <version>19.10.0</version>
+    <version>21.04.0</version>
     <keywords>sc979, widget, covid, centreon</keywords>
     <screenshot></screenshot>
     <url>./widgets/covid19/index.php</url>
